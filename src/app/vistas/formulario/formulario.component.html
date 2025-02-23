@@ -1,0 +1,54 @@
+<app-header></app-header>
+<div class="container">
+  <button class="btn btn-primary" (click)="regresar()">Regresar</button>
+  <br /><br />
+  <form [formGroup]="formulario" (ngSubmit)="Guardar()">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input id="nombre" formControlName="nombre" class="form-control" />
+      <div *ngIf="nombre?.invalid && nombre?.touched">
+        <small *ngIf="nombre?.hasError('required')"
+          >El nombre es obligatorio.</small
+        >
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido:</label>
+      <input id="apellido" formControlName="apellido" class="form-control" />
+      <div *ngIf="apellido?.invalid && apellido?.touched">
+        <small *ngIf="apellido?.hasError('required')"
+          >El apellido es obligatorio.</small
+        >
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="fecha" class="form-label">Fecha:</label>
+      <input
+        id="fecha"
+        formControlName="fecha"
+        type="date"
+        class="form-control"
+      />
+      <div *ngIf="fecha?.invalid && fecha?.touched">
+        <small *ngIf="fecha?.hasError('required')"
+          >La fecha es obligatoria.</small
+        >
+        <small *ngIf="fecha?.hasError('fechaInvalida')"
+          >La fecha no puede ser en el futuro.</small
+        >
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="formulario.invalid"
+      class="btn btn-success"
+    >
+      Guardar
+    </button>
+  </form>
+</div>
+<br />
+<app-footer></app-footer>

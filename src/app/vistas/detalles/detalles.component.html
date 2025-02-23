@@ -1,0 +1,54 @@
+<app-header></app-header>
+<div class="container">
+  <h1>{{ Titulo }}</h1>
+  <hr />
+  <details>
+    <summary>Mas Informacion</summary>
+    <ul>
+      <li><strong>Numero de Episodios:</strong> {{ Episodios }}</li>
+      <li><strong>Director</strong> {{ Director }}</li>
+      <li><strong>Opning:</strong> {{ Opening }}</li>
+    </ul>
+  </details>
+  <br />
+  <div class="text-center">
+    <div class="row align-items-start">
+      <div class="col">
+        <div class="card" style="width: 18rem">
+          <div class="card-header">Naves</div>
+          <ul class="list-group list-group-flush" *ngFor="let nave of naves">
+            <li class="list-group-item">{{ nave.name }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem">
+          <div class="card-header">Personajes</div>
+          <ul
+            class="list-group list-group-flush"
+            *ngFor="let personaje of personajes"
+          >
+            <li class="list-group-item">{{ personaje.name }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem">
+          <div class="card-header">Planetas</div>
+          <ul
+            class="list-group list-group-flush"
+            *ngFor="let planeta of planetas"
+          >
+            <li class="list-group-item">{{ planeta.name }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <button type="button" class="btn btn-secondary" (click)="regresar()">
+    Regresar
+  </button>
+</div>
+<br />
+<app-footer></app-footer>
