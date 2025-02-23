@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/Proyecto": {},
+    "/Proyecto/Detalles": {},
+    "/Proyecto/Formulario": {},
+    "/Proyecto/Listado": {}
+  }
+}
