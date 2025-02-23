@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://miragepioneer.github.io/Proyecto',
+  basePath: '/Proyecto',
   supportedLocales: {
   "en-US": ""
 },
